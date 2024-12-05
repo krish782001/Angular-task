@@ -8,17 +8,16 @@ import { TaskService, Task } from '../task.service';
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
-  filteredTasks: Task[] = [];  // To hold filtered tasks
+  filteredTasks: Task[] = [];  
   filter: string = 'all';
 
   constructor(private taskService: TaskService) {}
 
   ngOnInit() {
     this.tasks = this.taskService.getTasks();
-    this.filterTasks(); // Apply the default filter
+    this.filterTasks(); 
   }
 
-  // Update filter and apply filter on tasks
   filterTasks() {
     if (this.filter === 'all') {
       this.filteredTasks = [...this.tasks];
@@ -29,23 +28,22 @@ export class TaskListComponent implements OnInit {
     }
   }
 
-  // Handle filter change from FilterComponent
   onFilterChanged(filter: string) {
     this.filter = filter;
-    this.filterTasks(); // Re-apply filter
+    this.filterTasks(); 
   }
 
   toggleCompletion(task: Task) {
     const updatedCompletionStatus = !task.completed;
     this.taskService.updateTask(task.id, updatedCompletionStatus);
     task.completed = updatedCompletionStatus;
-    this.filterTasks(); // Re-apply filter after completion toggle
+    this.filterTasks(); 
   }
 
   deleteTask(task: Task) {
     this.taskService.deleteTask(task.id);
     this.tasks = this.tasks.filter(t => t.id !== task.id);
-    this.filterTasks(); // Re-apply filter after task deletion
+    this.filterTasks(); 
   }
 
   editTask(task: Task) {

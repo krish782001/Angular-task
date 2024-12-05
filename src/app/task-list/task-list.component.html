@@ -4,24 +4,19 @@
       <div *ngIf="tasks.length > 0" class="list-group">
         <div *ngFor="let task of tasks" class="list-group-item d-flex justify-content-between align-items-center">
           <span [class.text-decoration-line-through]="task.completed">
-            <!-- Display task name unless in editing mode -->
             <ng-container *ngIf="!task.isEditing">{{ task.name }}</ng-container>
-            <!-- Display input field when in editing mode -->
             <input *ngIf="task.isEditing" [(ngModel)]="task.name" type="text" class="form-control" />
           </span>
           <div>
             <button (click)="toggleCompletion(task)" class="btn btn-sm btn-success mr-2">
               {{ task.completed ? 'Undo' : 'Complete' }}
             </button>
-            <!-- Edit button -->
             <button *ngIf="!task.isEditing" (click)="editTask(task)" class="btn btn-sm btn-warning mr-2">
               Edit
             </button>
-            <!-- Save button appears when editing -->
             <button *ngIf="task.isEditing" (click)="saveTask(task)" class="btn btn-sm btn-primary">
               Save
             </button>
-            <!-- Delete button -->
             <button (click)="deleteTask(task)" class="btn btn-sm btn-danger">Delete</button>
           </div>
         </div>
