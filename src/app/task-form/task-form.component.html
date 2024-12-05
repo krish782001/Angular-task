@@ -1,0 +1,20 @@
+<!-- src/app/task-form/task-form.component.html -->
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h4 class="card-title text-center">Add New Task</h4>
+          <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+            <div class="form-group">
+              <label for="taskName">Task Name</label>
+              <input type="text" id="taskName" class="form-control" [(ngModel)]="taskName" name="taskName" required placeholder="Enter task name">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-3" [disabled]="!taskName">Add Task</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<!-- src/app/filter/filter.component.html -->
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <label for="filter">Filter Tasks:</label>
+      <select [(ngModel)]="filter" (change)="setFilter(filter)" class="form-control w-auto mx-auto">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+  </div>
+</div>

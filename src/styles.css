@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+
+/* Add a background color to the entire app */
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styling the container */
+  .container {
+    max-width: 900px;
+  }
+  
+  /* Additional margin and padding adjustments */
+  .mt-4 {
+    margin-top: 30px;
+  }
+  
+  /* Card Styles */
+  .card {
+    border-radius: 10px;
+  }
+  
+  .card-title {
+    font-weight: 600;
+    color: #495057;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Button Styles */
+  .btn {
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+  }
+  
+  /* Task List Item Styles */
+  .list-group-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .text-decoration-line-through {
+    text-decoration: line-through;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-muted {
+    color: #6c757d;
+  }
+  
